@@ -1,9 +1,11 @@
 package de.niklaseckert.reviewbombedapi.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Set;
 
 @Data
@@ -26,17 +28,19 @@ public class Game {
 
     @ManyToMany
     @JoinTable(
-            name = "games_publishers",
-            joinColumns = { @JoinColumn(name = "game_id") },
-            inverseJoinColumns = { @JoinColumn(name = "publisher_id") }
+            name = "games_publisher",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "publisher_id")
     )
-    private Set<Publisher> publishers;
+    @JsonManagedReference
+    private List<Publisher> publishers;
 
     @ManyToMany
     @JoinTable(
             name = "games_developer",
-            joinColumns = { @JoinColumn(name = "game_id") },
-            inverseJoinColumns = { @JoinColumn(name = "developer_id") }
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "developer_id")
     )
+    @JsonManagedReference
     private Set<Developer> developers;
 }

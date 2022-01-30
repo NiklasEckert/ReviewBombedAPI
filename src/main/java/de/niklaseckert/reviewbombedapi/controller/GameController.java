@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("games")
+@RequestMapping("/games")
 public class GameController {
     private final GameRepository repository;
 

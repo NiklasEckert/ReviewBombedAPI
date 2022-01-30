@@ -1,9 +1,10 @@
 package de.niklaseckert.reviewbombedapi.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 @Data
 @Entity
@@ -17,6 +18,7 @@ public class Publisher {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "publishers")
-    private Set<Game> games;
+    private List<Game> games;
 }
