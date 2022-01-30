@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:14.1
+    environment:
+      POSTGRES_USER: rb_root
+      POSTGRES_PASSWORD: rb_pass
+      POSTGRES_DB: reviewbombed_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
