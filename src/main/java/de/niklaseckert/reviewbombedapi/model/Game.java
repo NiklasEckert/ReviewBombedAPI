@@ -42,5 +42,9 @@ public class Game {
             inverseJoinColumns = @JoinColumn(name = "developer_id")
     )
     @JsonIgnore
-    private Set<Developer> developers;
+    private List<Developer> developers;
+
+    @JsonIgnore
+    @ManyToMany(mappedBy = "games")
+    private List<ListModel> lists;
 }
