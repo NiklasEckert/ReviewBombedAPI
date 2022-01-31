@@ -1,6 +1,6 @@
 package de.niklaseckert.reviewbombedapi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -18,7 +18,7 @@ public class Developer {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @JsonBackReference
+    @JsonIgnoreProperties({"developers", "publishers"})
     @ManyToMany(mappedBy = "developers")
     private List<Game> games;
 }

@@ -1,6 +1,6 @@
 package de.niklaseckert.reviewbombedapi.model;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -32,7 +32,7 @@ public class Game {
             joinColumns = @JoinColumn(name = "game_id"),
             inverseJoinColumns = @JoinColumn(name = "publisher_id")
     )
-    @JsonManagedReference
+    @JsonIgnoreProperties("games")
     private List<Publisher> publishers;
 
     @ManyToMany
@@ -41,6 +41,6 @@ public class Game {
             joinColumns = @JoinColumn(name = "game_id"),
             inverseJoinColumns = @JoinColumn(name = "developer_id")
     )
-    @JsonManagedReference
+    @JsonIgnoreProperties("games")
     private Set<Developer> developers;
 }
