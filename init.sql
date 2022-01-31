@@ -68,11 +68,10 @@ CREATE TABLE review_bombed.list (
     user_id INT REFERENCES rb_user (id) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE review_bombed.list_entry (
-    user_id INT REFERENCES rb_user (id) ON UPDATE CASCADE ON DELETE CASCADE,
+CREATE TABLE review_bombed.list_games (
     list_id INT REFERENCES list (id) ON UPDATE CASCADE ON DELETE CASCADE,
     game_id INT REFERENCES games (id) ON UPDATE CASCADE ON DELETE CASCADE,
-    CONSTRAINT list_entry_pkey PRIMARY KEY (user_id, list_id, game_id)
+    CONSTRAINT list_entry_pkey PRIMARY KEY (list_id, game_id)
 );
 
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed', '2007-11-14', 'The first installment in the Assassin''s Creed franchise.');
@@ -167,10 +166,10 @@ INSERT INTO diary_entry (rate, date, user_id, game_id) SELECT 6, '2021-05-26', u
 INSERT INTO list (name, description, user_id) SELECT 'Ezio Trilogy', 'All titles with Ezio.', u.id FROM rb_user u WHERE name = 'LEGION';
 INSERT INTO list (name, description, user_id) SELECT 'AC Female', 'All AC titles with female protagonists', u.id FROM rb_user u WHERE name = 'LEGION';
 
-INSERT INTO list_entry (user_id, list_id, game_id) SELECT u.id, l.id, g.id FROM rb_user u, list l, games g WHERE u.name = 'LEGION' AND l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed II';
-INSERT INTO list_entry (user_id, list_id, game_id) SELECT u.id, l.id, g.id FROM rb_user u, list l, games g WHERE u.name = 'LEGION' AND l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed: Brotherhood';
-INSERT INTO list_entry (user_id, list_id, game_id) SELECT u.id, l.id, g.id FROM rb_user u, list l, games g WHERE u.name = 'LEGION' AND l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed: Revelations';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed II';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed: Brotherhood';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed: Revelations';
 
-INSERT INTO list_entry (user_id, list_id, game_id) SELECT u.id, l.id, g.id FROM rb_user u, list l, games g WHERE u.name = 'LEGION' AND l.name = 'AC Female' AND g.title = 'Assassin''s Creed Syndicate';
-INSERT INTO list_entry (user_id, list_id, game_id) SELECT u.id, l.id, g.id FROM rb_user u, list l, games g WHERE u.name = 'LEGION' AND l.name = 'AC Female' AND g.title = 'Assassin''s Creed Odyssey';
-INSERT INTO list_entry (user_id, list_id, game_id) SELECT u.id, l.id, g.id FROM rb_user u, list l, games g WHERE u.name = 'LEGION' AND l.name = 'AC Female' AND g.title = 'Assassin''s Creed Valhalla';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'AC Female' AND g.title = 'Assassin''s Creed Syndicate';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'AC Female' AND g.title = 'Assassin''s Creed Odyssey';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'AC Female' AND g.title = 'Assassin''s Creed Valhalla';
