@@ -19,7 +19,10 @@ public class UserModelAssembler implements RepresentationModelAssembler<User, En
         return EntityModel.of(user,
                     linkTo(methodOn(UserController.class).one(user.getId())).withSelfRel(),
                     linkTo(methodOn(UserController.class).all()).withRel("users"),
-                    linkTo(methodOn(UserController.class).allListsOfUser(user.getId())).withRel("allListsOfUser")
+                    linkTo(methodOn(UserController.class).allListsOfUser(user.getId())).withRel("allListsOfUser"),
+                    linkTo(methodOn(UserController.class).allRatingsOfUser(user.getId())).withRel("ratings"),
+                    linkTo(methodOn(UserController.class).diaryOfUser(user.getId())).withRel("diary"),
+                    linkTo(methodOn(UserController.class).allReviewsOfUser(user.getId())).withRel("reviews")
                 );
     }
 }

@@ -6,7 +6,6 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Set;
 
 @Data
 @Entity
@@ -47,4 +46,16 @@ public class Game {
     @JsonIgnore
     @ManyToMany(mappedBy = "games")
     private List<ListModel> lists;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "game")
+    private List<Rating> ratings;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "game")
+    private List<DiaryEntry> diaryEntries;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "game")
+    private List<Review> reviews;
 }

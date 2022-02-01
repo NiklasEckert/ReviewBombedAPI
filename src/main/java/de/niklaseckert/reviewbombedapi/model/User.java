@@ -28,4 +28,16 @@ public class User {
     @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<ListModel> lists;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Rating> ratings;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<DiaryEntry> diary;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;
 }
