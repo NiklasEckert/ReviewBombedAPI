@@ -31,7 +31,7 @@ public class Game {
             joinColumns = @JoinColumn(name = "game_id"),
             inverseJoinColumns = @JoinColumn(name = "publisher_id")
     )
-    @JsonIgnore
+//    @JsonIgnore
     private List<Publisher> publishers;
 
     @ManyToMany
@@ -40,7 +40,7 @@ public class Game {
             joinColumns = @JoinColumn(name = "game_id"),
             inverseJoinColumns = @JoinColumn(name = "developer_id")
     )
-    @JsonIgnore
+//    @JsonIgnore
     private List<Developer> developers;
 
     @JsonIgnore

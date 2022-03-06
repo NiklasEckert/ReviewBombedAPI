@@ -29,20 +29,32 @@ public class DeveloperController {
     private final DeveloperModelAssembler assembler;
     private final GameModelAssembler gameModelAssembler;
 
-    @GetMapping
-    public CollectionModel<EntityModel<Developer>> all() {
-        List<EntityModel<Developer>> developers = repository.findAll().stream()
-                .map(assembler::toModel)
-                .collect(Collectors.toList());
+//    @GetMapping
+//    public CollectionModel<EntityModel<Developer>> all() {
+//        List<EntityModel<Developer>> developers = repository.findAll().stream()
+//                .map(assembler::toModel)
+//                .collect(Collectors.toList());
+//
+//        return CollectionModel.of(developers, linkTo(methodOn(DeveloperController.class).all()).withSelfRel());
+//    }
 
-        return CollectionModel.of(developers, linkTo(methodOn(DeveloperController.class).all()).withSelfRel());
+    @GetMapping
+    public List<Developer> all() {
+        return repository.findAll();
     }
 
+//    @GetMapping("/{id}")
+//    public EntityModel<Developer> one(@PathVariable Long id) {
+//        Developer developer = repository.findById(id).orElseThrow(() -> new DeveloperNotFoundException(id));
+//
+//        return assembler.toModel(developer);
+//    }
+
     @GetMapping("/{id}")
-    public EntityModel<Developer> one(@PathVariable Long id) {
+    public Developer one(@PathVariable Long id) {
         Developer developer = repository.findById(id).orElseThrow(() -> new DeveloperNotFoundException(id));
 
-        return assembler.toModel(developer);
+        return developer;
     }
 
     @GetMapping("/{id}/games")

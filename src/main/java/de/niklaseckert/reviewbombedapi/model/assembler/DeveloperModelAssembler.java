@@ -19,7 +19,7 @@ public class DeveloperModelAssembler implements RepresentationModelAssembler<Dev
         return EntityModel.of(developer,
                     linkTo(methodOn(DeveloperController.class).one(developer.getId())).withSelfRel(),
                     linkTo(methodOn(DeveloperController.class).all()).withRel("developers"),
-                    linkTo(methodOn(DeveloperController.class).allGames(developer.getId())).withRel("allGames")
+                    linkTo(methodOn(DeveloperController.class).allGames(developer.getId())).withRel("games")
                 );
     }
 }
