@@ -38,6 +38,17 @@ CREATE TABLE review_bombed.rb_user (
     password TEXT NOT NULL
 );
 
+CREATE TABLE review_bombed.rb_role (
+    id serial PRIMARY KEY,
+    name TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE review_bombed.user_roles (
+    user_id INT REFERENCES rb_user (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    role_id INT REFERENCES rb_role (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    PRIMARY KEY (user_id, role_id)
+);
+
 CREATE TABLE review_bombed.rating (
     id serial PRIMARY KEY,
     rate SMALLINT NOT NULL,
