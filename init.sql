@@ -6,7 +6,8 @@ CREATE TABLE review_bombed.games (
     id serial PRIMARY KEY,
     title TEXT NOT NULL,
     publishing_date DATE NOT NULL,
-    description TEXT
+    description TEXT,
+    cover_url TEXT NOT NULL
 );
 
 CREATE TABLE review_bombed.publisher (
@@ -85,18 +86,18 @@ CREATE TABLE review_bombed.list_games (
     CONSTRAINT list_entry_pkey PRIMARY KEY (list_id, game_id)
 );
 
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed', '2007-11-14', 'The first installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed II', '2009-11-17', 'The second installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Brotherhood', '2010-11-16', 'The third installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Revelations', '2011-11-15', 'The fourth installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed III', '2012-10-30', 'The fifth installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed IV: Black Flag', '2013-10-29', 'The sixth installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Rogue', '2014-11-11', 'The seventh installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Unity', '2014-11-11', 'The eighth installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Syndicate', '2015-10-23', 'The ninth installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Origins', '2017-10-27', 'The tenth installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Odyssey', '2018-10-05', 'The eleventh installment in the Assassin''s Creed franchise.');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Valhalla', '2020-11-10', 'The twelfth installment in the Assassin''s Creed franchise.');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed', '2007-11-14', 'The first installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/6a/Accover.jpg/revision/latest/scale-to-width-down/699?cb=20210519104609');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed II', '2009-11-17', 'The second installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/0/09/AC2coverHighRes.jpg/revision/latest/scale-to-width-down/700?cb=20120706023159');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Brotherhood', '2010-11-16', 'The third installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2a/Assassins_Creed_brotherhood_cover.jpg/revision/latest/scale-to-width-down/700?cb=20210519124648');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Revelations', '2011-11-15', 'The fourth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/5/51/ACR_Boxart.jpg/revision/latest/scale-to-width-down/700?cb=20110703195808');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed III', '2012-10-30', 'The fifth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/e/ec/Assassin%27s_Creed_III_Cover.jpg/revision/latest/scale-to-width-down/700?cb=20120812182759');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed IV: Black Flag', '2013-10-29', 'The sixth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/6d/Assassin%27s_Creed_IV_Black_Flag.jpg/revision/latest/scale-to-width-down/699?cb=20130904164224');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Rogue', '2014-11-11', 'The seventh installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/e/e5/Assassin%27s_Creed_Rogue_-_Cover_Art.jpeg/revision/latest/scale-to-width-down/700?cb=20140809155555');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Unity', '2014-11-11', 'The eighth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/0/0b/Assassin%27s_Creed_Unity_Cover.jpg/revision/latest/scale-to-width-down/699?cb=20140610082722');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Syndicate', '2015-10-23', 'The ninth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/c/c2/ACS_Box_art_icon.jpg/revision/latest/scale-to-width-down/700?cb=20150512162954');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Origins', '2017-10-27', 'The tenth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2f/ACOrigins_cover.jpg/revision/latest/scale-to-width-down/700?cb=20200127122455');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Odyssey', '2018-10-05', 'The eleventh installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/f/f5/Assassin%27s_Creed_Odyssey.jpg/revision/latest/scale-to-width-down/700?cb=20210519141716');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Valhalla', '2020-11-10', 'The twelfth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/65/AC_Valhalla_cover.jpg/revision/latest/scale-to-width-down/666?cb=20200430195147');
 
 INSERT INTO publisher VALUES (DEFAULT, 'Ubisoft');
 
