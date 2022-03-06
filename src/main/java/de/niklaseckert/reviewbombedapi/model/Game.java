@@ -1,6 +1,7 @@
 package de.niklaseckert.reviewbombedapi.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -25,6 +26,9 @@ public class Game {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "cover_url")
+    private String coverUrl;
+
     @ManyToMany
     @JoinTable(
             name = "games_publisher",
@@ -40,7 +44,7 @@ public class Game {
             joinColumns = @JoinColumn(name = "game_id"),
             inverseJoinColumns = @JoinColumn(name = "developer_id")
     )
-//    @JsonIgnore
+    @JsonIgnoreProperties({"games", "publishers"})
     private List<Developer> developers;
 
     @JsonIgnore
