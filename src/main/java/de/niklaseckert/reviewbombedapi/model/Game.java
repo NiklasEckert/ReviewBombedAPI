@@ -29,6 +29,9 @@ public class Game {
     @Column(name = "cover_url")
     private String coverUrl;
 
+    @Column(name = "preview_image_url")
+    private String previewImageUrl;
+
     @ManyToMany
     @JoinTable(
             name = "games_publisher",
