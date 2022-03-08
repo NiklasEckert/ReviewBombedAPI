@@ -20,8 +20,7 @@ public class ListModelAssembler implements RepresentationModelAssembler<ListMode
         return EntityModel.of(list,
                     linkTo(methodOn(ListController.class).one(list.getId())).withSelfRel(),
                     linkTo(methodOn(UserController.class).one(list.getUser().getId())).withRel("user"),
-                    linkTo(methodOn(UserController.class).allListsOfUser(list.getUser().getId())).withRel("allListsOfUser"),
-                    linkTo(methodOn(ListController.class).allGamesOfList(list.getId())).withRel("allGamesOfList")
+                    linkTo(methodOn(UserController.class).allListsOfUser(list.getUser().getId())).withRel("allListsOfUser")
                 );
     }
 

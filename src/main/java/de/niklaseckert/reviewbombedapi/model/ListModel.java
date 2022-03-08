@@ -1,6 +1,7 @@
 package de.niklaseckert.reviewbombedapi.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -31,6 +32,6 @@ public class ListModel {
             joinColumns = @JoinColumn(name = "list_id"),
             inverseJoinColumns = @JoinColumn(name = "game_id")
     )
-    @JsonIgnore
+    @JsonIgnoreProperties({ "publishers", "developers" })
     private List<Game> games;
 }

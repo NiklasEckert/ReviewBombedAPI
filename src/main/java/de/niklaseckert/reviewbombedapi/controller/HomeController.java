@@ -16,8 +16,18 @@ public class HomeController {
 
     private final GameRepository gameRepository;
 
-    @GetMapping
-    public List<Game> all() {
+    @GetMapping("/currently-playing")
+    public List<Game> currentlyPlaying() {
         return gameRepository.findAll();
+    }
+
+    @GetMapping("/friends-playing")
+    public List<Game> friendsPlaying() {
+        return gameRepository.findAllByTitle("Assassin's Creed Valhalla");
+    }
+
+    @GetMapping("/friends-finished")
+    public List<Game> friendsFinished() {
+        return gameRepository.findAllByTitle("Assassin's Creed IV: Black Flag");
     }
 }

@@ -29,21 +29,36 @@ public class ListController {
     private final ListModelAssembler assembler;
     private final GameModelAssembler gameModelAssembler;
 
-    @GetMapping("/{id}")
-    public EntityModel<ListModel> one(@PathVariable Long id) {
-        ListModel list = repository.findById(id).orElseThrow(() -> new ListNotFoundException(id));
-        return assembler.toModel(list);
+//    @GetMapping("/{id}")
+//    public EntityModel<ListModel> one(@PathVariable Long id) {
+//        ListModel list = repository.findById(id).orElseThrow(() -> new ListNotFoundException(id));
+//        return assembler.toModel(list);
+//    }
+//
+//    @GetMapping("/{id}/games")
+//    public CollectionModel<EntityModel<Game>> allGamesOfList(@PathVariable Long id) {
+//        ListModel list = repository.findById(id).orElseThrow(() -> new ListNotFoundException(id));
+//        List<EntityModel<Game>> games = list.getGames().stream()
+//                .map(gameModelAssembler::toModel)
+//                .collect(Collectors.toList());
+//        return CollectionModel.of(games,
+//                    linkTo(methodOn(ListController.class).allGamesOfList(list.getId())).withSelfRel(),
+//                    linkTo(methodOn(ListController.class).one(list.getId())).withRel("list")
+//                );
+//    }
+
+    @GetMapping
+    public List<ListModel> all() {
+        return repository.findAll();
     }
 
-    @GetMapping("/{id}/games")
-    public CollectionModel<EntityModel<Game>> allGamesOfList(@PathVariable Long id) {
-        ListModel list = repository.findById(id).orElseThrow(() -> new ListNotFoundException(id));
-        List<EntityModel<Game>> games = list.getGames().stream()
-                .map(gameModelAssembler::toModel)
-                .collect(Collectors.toList());
-        return CollectionModel.of(games,
-                    linkTo(methodOn(ListController.class).allGamesOfList(list.getId())).withSelfRel(),
-                    linkTo(methodOn(ListController.class).one(list.getId())).withRel("list")
-                );
+    @GetMapping("/{id}")
+    public ListModel one(@PathVariable Long id) {
+        return repository.findById(id).orElseThrow(() -> new ListNotFoundException(id));
     }
+
+//    @GetMapping("/{id}/games")
+//    public List<Game> allGamesOfList(@PathVariable Long id) {
+//        return repository.findById(id).orElseThrow(() -> new ListNotFoundException(id));
+//    }
 }
