@@ -65,4 +65,8 @@ public class Game {
     @JsonIgnore
     @OneToMany(mappedBy = "game")
     private List<Review> reviews;
+
+    //@JsonIgnoreProperties({"id"})
+    @OneToMany(mappedBy = "game")
+    private List<Screenshot> screenshots;
 }

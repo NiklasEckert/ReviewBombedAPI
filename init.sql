@@ -87,6 +87,13 @@ CREATE TABLE review_bombed.list_games (
     CONSTRAINT list_entry_pkey PRIMARY KEY (list_id, game_id)
 );
 
+CREATE TABLE review_bombed.screenshot (
+    id serial PRIMARY KEY,
+    game_id INT REFERENCES games (id) ON UPDATE CASCADE ON DELETE CASCADE,
+    screenshot_url TEXT NOT NULL
+
+);
+
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed', '2007-11-14', 'The first installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/6a/Accover.jpg/revision/latest/scale-to-width-down/699?cb=20210519104609', 'https://i.pinimg.com/originals/d9/6c/5f/d96c5ffb1e75ab3d8022aae7dddb29bb.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed II', '2009-11-17', 'The second installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/0/09/AC2coverHighRes.jpg/revision/latest/scale-to-width-down/700?cb=20120706023159', 'https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3scVp8xK8WCvad1zmHtJxf/53cab66f5c29340786a21b8b508e8500/-ACII-_Screenshots_-_2.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Brotherhood', '2010-11-16', 'The third installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2a/Assassins_Creed_brotherhood_cover.jpg/revision/latest/scale-to-width-down/700?cb=20210519124648', 'https://assets1.ignimgs.com/thumbs/userUploaded/2015/10/26/36190303assassinscreedbrotherhoode32010cinematictrailerign-1445900282791.jpg');
@@ -99,6 +106,78 @@ INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Syndicate', '2015-10-23', 
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Origins', '2017-10-27', 'The tenth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2f/ACOrigins_cover.jpg/revision/latest/scale-to-width-down/700?cb=20200127122455', 'https://c4.wallpaperflare.com/wallpaper/173/586/516/assassin-s-creed-assassin-s-creed-origins-bayek-of-siwa-wallpaper-preview.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Odyssey', '2018-10-05', 'The eleventh installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/f/f5/Assassin%27s_Creed_Odyssey.jpg/revision/latest/scale-to-width-down/700?cb=20210519141716', 'https://i.ytimg.com/vi/hCHvx-I8A0w/maxresdefault.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Valhalla', '2020-11-10', 'The twelfth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/65/AC_Valhalla_cover.jpg/revision/latest/scale-to-width-down/666?cb=20200430195147', 'http://digicpictures.com///images/upload/Raven_cover_00003321.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot005.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot001.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot009.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot004.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot020.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 2, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac2_image_53.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 2, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac2_image23.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 2, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac2_image22.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 2, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac2_s_014.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 2, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac2_image27.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 3, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acb_sp_s_01_rome_pantheonandhorses.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 3, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acb_sp_s_05_guncounterkill.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 3, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acb_sp_s_26_parachute.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 3, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acb_dlc4_sp_02_deliziadibelriguardo.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 3, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acb_sp_s_27_putting_the_borgia_tower_on_fire.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 4, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acr_sp_sc_04_hookblade_hanging.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 4, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acr_sp_sc_02_hookblade_zipline.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 4, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acr_sp_sc_17_ezio_combatinatlasvillage.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 4, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acr_sp_sc_15_ezio_settingthebomb.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 4, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acr_sp_sc_11_burningship.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 5, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366964075_120815_10am_ac3_s_sp_sony_benedictarnold_55_gamescom.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 5, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366964058_120604_04pm_ac3_sc_sp_28_sd_boston_musket.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 5, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366964064_120604_07pm_ac3_sc_sp_31_sd_naval_warfare.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 5, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366964056_120604_04pm_ac3_sc_sp_21_frontier_treerunning.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 5, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366964158_ac3_dlc_sp_15_frontier_ratonwolfleader2_online.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 6, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366234716_ac4bf_sc_sp_04_boardingassassination.jpg.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 6, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1372241824_acivbf_screenshotsp_e3_caribbeansea_leapoffaith_130610_4h15pmpt.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 6, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1369386341_acivbf_screenshot_havana_rushtoassassinate.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 6, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366234715_ac4bf_sc_sp_01_iiconicpose_edward.jpg.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 6, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/1366234717_ac4bf_sc_sp_07_junglefreerunning.jpg.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 7, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_rogue_screenshot_005.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 7, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_rogue_screenshot_004.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 7, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_rogue_screenshot_014.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 7, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_rogue_screenshot_003.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 7, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_rogue_screenshot_001.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 8, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_unity_screenshots_009.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 8, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_unity_screenshots_007.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 8, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_unity_screenshots_015.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 8, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_unity_screenshots_002.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 8, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_unity_screenshots_010.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 9, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acs_screen_hat_gangleader_wm_20150512_1830cet.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 9, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acs_screen_combat-cane_wm_e3_150615_4pmpt_1434307896.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 9, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acs_screen_carriagegunfight_wm_e3_150615_4pmpt_1434307892.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 9, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acs_screen_bracer_wm_20150512_1830cet.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 9, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acs_screen_environment-bigben_wm_e3_150615_4pmpt_1434307898.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 10, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac_media_screen-pyramidslide_ncsa.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 10, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac_media_screen-sphinxday_ncsa.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 10, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac_media_screen-rangedcombat_ncsa.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 10, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac_media_screen-bayekshield_ncsa.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 10, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/ac_media_screen-bayekdesert_ncsa.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 11, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acodyssey_fallengodstatue.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 11, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acodyssey_battlefieldshieldbreak.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 11, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acodyssey_cleaving.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 11, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acodyssey_jumpattack.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 11, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/acodyssey_stealthassassination.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/287/assassins-creed-valhalla_6099042.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/287/assassins-creed-valhalla_6099043.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/279/assassins-creed-valhalla_6099044.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/279/assassins-creed-valhalla-screenshots_6115884.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/279/assassins-creed-valhalla-screenshots_6115880.jpg');
 
 INSERT INTO publisher VALUES (DEFAULT, 'Ubisoft');
 
@@ -177,7 +256,7 @@ INSERT INTO diary_entry (rate, date, user_id, game_id) SELECT 7, '2019-06-07', u
 INSERT INTO diary_entry (rate, date, user_id, game_id) SELECT 6, '2021-05-26', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed Valhalla';
 
 INSERT INTO list (name, description, user_id) SELECT 'Ezio Trilogy', 'All titles with Ezio.', u.id FROM rb_user u WHERE name = 'LEGION';
-INSERT INTO list (name, description, user_id) SELECT 'AC Female', 'All AC titles with female protagonists', u.id FROM rb_user u WHERE name = 'LEGION';
+INSERT INTO list (name, description, user_id) SELECT 'AC Female', 'All AC titles with female protagonists.', u.id FROM rb_user u WHERE name = 'LEGION';
 
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed II';
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed: Brotherhood';
