@@ -6,6 +6,7 @@ import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Data
 @Entity
@@ -18,6 +19,9 @@ public class Review {
 
     @Column(name = "title", nullable = false)
     private String title;
+
+    @Column(name = "review_date", nullable = false)
+    private LocalDate reviewDate;
 
     @Column(name = "rate", nullable = false)
     private int rate;

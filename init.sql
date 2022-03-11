@@ -61,6 +61,7 @@ CREATE TABLE review_bombed.rating (
 CREATE TABLE review_bombed.review (
     id serial PRIMARY KEY,
     title TEXT NOT NULL,
+    review_date date NOT NULL,
     rate SMALLINT NOT NULL,
     review_text TEXT NOT NULL,
     user_id INT REFERENCES rb_user (id) ON UPDATE CASCADE ON DELETE CASCADE,
@@ -240,8 +241,8 @@ INSERT INTO rating (rate, user_id, game_id) SELECT 8, u.id, g.id FROM rb_user u,
 INSERT INTO rating (rate, user_id, game_id) SELECT 7, u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed Odyssey';
 INSERT INTO rating (rate, user_id, game_id) SELECT 6, u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed Valhalla';
 
-INSERT INTO review (rate, title, review_text, user_id, game_id) SELECT 4, 'Title1', 'Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series.', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed: Brotherhood';
-INSERT INTO review (rate, title, review_text, user_id, game_id) SELECT 5, 'Title2', 'Best in the series.', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed IV: Black Flag';
+INSERT INTO review (rate, title, review_date, review_text, user_id, game_id) SELECT 4, 'Title1', '2022-03-09', 'Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series. Second best in the series.', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed: Brotherhood';
+INSERT INTO review (rate, title, review_date, review_text, user_id, game_id) SELECT 5, 'Title2', '2022-03-10', 'Best in the series.', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed IV: Black Flag';
 
 INSERT INTO diary_entry (rate, date, user_id, game_id) SELECT 5, '2010-07-20', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed';
 INSERT INTO diary_entry (rate, date, user_id, game_id) SELECT 8, '2010-09-21', u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed II';
