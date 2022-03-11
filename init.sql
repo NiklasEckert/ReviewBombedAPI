@@ -37,7 +37,8 @@ CREATE TABLE review_bombed.rb_user (
     id serial PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
     email TEXT NOT NULL UNIQUE,
-    password TEXT NOT NULL
+    password TEXT NOT NULL,
+    image_url TEXT
 );
 
 CREATE TABLE review_bombed.rb_role (
@@ -98,7 +99,7 @@ CREATE TABLE review_bombed.screenshot (
 
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed', '2007-11-14', 'The first installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/6a/Accover.jpg/revision/latest/scale-to-width-down/699?cb=20210519104609', 'https://i.pinimg.com/originals/d9/6c/5f/d96c5ffb1e75ab3d8022aae7dddb29bb.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed II', '2009-11-17', 'The second installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/0/09/AC2coverHighRes.jpg/revision/latest/scale-to-width-down/700?cb=20120706023159', 'https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3scVp8xK8WCvad1zmHtJxf/53cab66f5c29340786a21b8b508e8500/-ACII-_Screenshots_-_2.jpg');
-INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Brotherhood', '2010-11-16', 'The third installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2a/Assassins_Creed_brotherhood_cover.jpg/revision/latest/scale-to-width-down/700?cb=20210519124648', 'https://assets1.ignimgs.com/thumbs/userUploaded/2015/10/26/36190303assassinscreedbrotherhoode32010cinematictrailerign-1445900282791.jpg');
+INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Brotherhood', '2010-11-16', 'The third installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2a/Assassins_Creed_brotherhood_cover.jpg/revision/latest/scale-to-width-down/700?cb=20210519124648', 'https://www.pcgameshardware.de/screenshots/medium/2010/11/Assassins_Creed_Brotherhood_Test_08.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed: Revelations', '2011-11-15', 'The fourth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/5/51/ACR_Boxart.jpg/revision/latest/scale-to-width-down/700?cb=20110703195808', 'http://www.digicpictures.com//images/upload/ACR_1310x560_05.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed III', '2012-10-30', 'The fifth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/e/ec/Assassin%27s_Creed_III_Cover.jpg/revision/latest/scale-to-width-down/700?cb=20120812182759', 'https://www.dsogaming.com/wp-content/uploads/2016/11/Assassins-Creed-3-feature.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed IV: Black Flag', '2013-10-29', 'The sixth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/6d/Assassin%27s_Creed_IV_Black_Flag.jpg/revision/latest/scale-to-width-down/699?cb=20130904164224', 'https://dailygame.at/wp-content/uploads/2019/09/assa-blackflag-765x470.jpg');
@@ -226,7 +227,7 @@ INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE ti
 INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Odyssey'        AND name = 'Ubisoft Québec';
 INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Valhalla'       AND name = 'Ubisoft Montreal';
 
-INSERT INTO rb_user VALUES (DEFAULT, 'LEGION', 'niklas.eckert.1807@gmail.com', 'password1234');
+INSERT INTO rb_user VALUES (DEFAULT, 'LEGION', 'niklas.eckert.1807@gmail.com', 'password1234', 'https://nextcloud.niklas-eckert.de/index.php/s/yHS7oEHn6BMyL29/preview');
 
 INSERT INTO rating (rate, user_id, game_id) SELECT 5, u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed';
 INSERT INTO rating (rate, user_id, game_id) SELECT 8, u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed II';

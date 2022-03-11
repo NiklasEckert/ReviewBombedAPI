@@ -1,6 +1,7 @@
 package de.niklaseckert.reviewbombedapi.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -28,7 +29,10 @@ public class User implements UserDetails {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @JsonIgnore
+    @Column(name = "image_url", nullable = false)
+    private String profileImageUrl;
+
+    @JsonIgnoreProperties({ "games", "user" })
     @OneToMany(mappedBy = "user")
     private List<ListModel> lists;
 
@@ -40,7 +44,7 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     private List<DiaryEntry> diary;
 
-    @JsonIgnore
+    @JsonIgnoreProperties({ "games", "user" })
     @OneToMany(mappedBy = "user")
     private List<Review> reviews;
 

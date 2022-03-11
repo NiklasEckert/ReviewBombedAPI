@@ -41,10 +41,16 @@ public class UserController {
         return CollectionModel.of(users, linkTo(methodOn(UserController.class).all()).withSelfRel());
     }
 
+//    @GetMapping("/{id}")
+//    public EntityModel<User> one(@PathVariable Long id) {
+//        User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+//        return assembler.toModel(user);
+//    }
+
     @GetMapping("/{id}")
-    public EntityModel<User> one(@PathVariable Long id) {
+    public User one(@PathVariable Long id) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-        return assembler.toModel(user);
+        return user;
     }
 
     @GetMapping("/{id}/lists")
