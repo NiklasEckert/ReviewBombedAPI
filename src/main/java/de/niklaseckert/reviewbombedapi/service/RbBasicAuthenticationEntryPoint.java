@@ -8,6 +8,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * Custom Basic Authentication Entry Point.
+ *
+ * @author Niklas Eckert
+ * @author Jakob Friedsam
+ */
 @Component
 public class RbBasicAuthenticationEntryPoint extends BasicAuthenticationEntryPoint {
     @Override
