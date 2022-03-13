@@ -228,7 +228,7 @@ INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE ti
 INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Valhalla'       AND name = 'Ubisoft Montreal';
 
 INSERT INTO rb_user VALUES (DEFAULT, 'LEGION', 'niklas.eckert.1807@gmail.com', 'password1234', 'https://nextcloud.niklas-eckert.de/index.php/s/yHS7oEHn6BMyL29/preview');
-INSERT INTO rb_user VALUES (DEFAULT, 'jako264', 'jakob.friedsam@gmx.de', 'wild', 'https://www.kindpng.com/picc/m/281-2814774_sucker-transparent-background-middle-finger-clipart-hd-png.png');
+INSERT INTO rb_user VALUES (DEFAULT, 'jako264', 'jakob.friedsam@gmx.de', 'wild', 'https://static.wikia.nocookie.net/starwars/images/a/a3/Appo.jpg/revision/latest?cb=20080427033310');
 
 INSERT INTO rating (rate, user_id, game_id) SELECT 5, u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed';
 INSERT INTO rating (rate, user_id, game_id) SELECT 8, u.id, g.id FROM rb_user u, games g WHERE name = 'LEGION' AND title = 'Assassin''s Creed II';
