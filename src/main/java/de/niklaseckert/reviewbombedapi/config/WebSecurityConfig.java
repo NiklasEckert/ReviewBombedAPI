@@ -13,12 +13,20 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
+/**
+ * Class which restricts access for the {@link de.niklaseckert.reviewbombedapi.model.User User}.
+ *
+ * @author Niklas Eckert
+ * @author Jakob Friedsam
+ */
 @Configuration
 @EnableWebSecurity
 @AllArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserDetailsService userDetailsService;
+//    private final UserDetailsService userDetailsService;
+
+    /** Checks if a {@link de.niklaseckert.reviewbombedapi.model.User User} is authenticated. */
     private final RbBasicAuthenticationEntryPoint basicAuthenticationEntryPoint;
 
     @Override
@@ -26,6 +34,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         super.configure(auth);
     }
 
+    /**
+     * Configures the access.
+     *
+     * @param http allows configuring web based security for specific http requests.
+     * @throws Exception if something goes wrong.
+     */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -52,6 +66,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //        return new BCryptPasswordEncoder(10);
 //    }
 
+    /**
+     * Password encoder which is used to encrypt the passwords.
+     *
+     * @return a password encoder.
+     */
     @Bean
     public NoOpPasswordEncoder getPasswordEncoder() {
         return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
