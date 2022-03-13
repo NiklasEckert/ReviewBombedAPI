@@ -2,7 +2,6 @@ package de.niklaseckert.reviewbombedapi.controller;
 
 import de.niklaseckert.reviewbombedapi.controller.exception.GameNotFoundException;
 import de.niklaseckert.reviewbombedapi.controller.exception.ReviewNotFoundException;
-import de.niklaseckert.reviewbombedapi.controller.exception.UserNotFoundException;
 import de.niklaseckert.reviewbombedapi.model.Game;
 import de.niklaseckert.reviewbombedapi.model.Review;
 import de.niklaseckert.reviewbombedapi.model.User;
@@ -37,7 +36,6 @@ public class ReviewController {
 
     @PostMapping
     public Review post(@RequestBody Review review, @RequestHeader("gameId") Long gameId) {
-//        User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException(userId));
         User user = userRepository.findByName(SecurityContextHolder.getContext().getAuthentication().getName()).orElseThrow(() -> new UsernameNotFoundException(""));
         Game game = gameRepository.findById(gameId).orElseThrow(() -> new GameNotFoundException(gameId));
 
