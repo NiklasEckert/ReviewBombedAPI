@@ -29,7 +29,7 @@ public class Review {
     @Column(name = "review_text", nullable = false)
     private String reviewText;
 
-    @JsonIgnore
+    @JsonIgnoreProperties({"lists", "ratings", "diary", "reviews"})
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
