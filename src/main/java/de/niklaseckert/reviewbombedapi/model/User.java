@@ -44,7 +44,7 @@ public class User implements UserDetails {
     @OneToMany(mappedBy = "user")
     private List<DiaryEntry> diary;
 
-    @JsonIgnoreProperties({ "games", "user" })
+    @JsonIgnoreProperties({ "games" })
     @OneToMany(mappedBy = "user")
     private List<Review> reviews;
 

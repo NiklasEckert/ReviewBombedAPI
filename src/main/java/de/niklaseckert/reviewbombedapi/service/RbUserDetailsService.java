@@ -1,5 +1,6 @@
 package de.niklaseckert.reviewbombedapi.service;
 
+import de.niklaseckert.reviewbombedapi.controller.exception.UserNotFoundException;
 import de.niklaseckert.reviewbombedapi.repos.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,6 +16,6 @@ public class RbUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return repository.findByName(username);
+        return repository.findByName(username).orElseThrow(() -> new UsernameNotFoundException(""));
     }
 }
