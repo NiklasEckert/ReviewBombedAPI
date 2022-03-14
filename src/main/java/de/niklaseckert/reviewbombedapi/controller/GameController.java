@@ -4,67 +4,75 @@ import de.niklaseckert.reviewbombedapi.controller.exception.GameNotFoundExceptio
 import de.niklaseckert.reviewbombedapi.model.Developer;
 import de.niklaseckert.reviewbombedapi.model.Game;
 import de.niklaseckert.reviewbombedapi.model.Publisher;
-import de.niklaseckert.reviewbombedapi.model.assembler.DeveloperModelAssembler;
-import de.niklaseckert.reviewbombedapi.model.assembler.GameModelAssembler;
-import de.niklaseckert.reviewbombedapi.model.assembler.PublisherModelAssembler;
 import de.niklaseckert.reviewbombedapi.repos.GameRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.hateoas.CollectionModel;
-import org.springframework.hateoas.EntityModel;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
+/**
+ * Controller which handles all {@link Game Game} requests.
+ *
+ * @author Niklas Eckert
+ * @author Jakob Friedsam
+ */
 @RestController
 @AllArgsConstructor
 @RequestMapping("/games")
 public class GameController {
 
+    /** Repository which contains the {@link Game Games}. */
     private final GameRepository repository;
-    private final GameModelAssembler assembler;
-    private final DeveloperModelAssembler developerModelAssembler;
-    private final PublisherModelAssembler publisherModelAssembler;
 
+    /**
+     * Get Mapping for all {@link Game Games}.
+     *
+     * @return a list of all {@link Game Game}.
+     */
     @GetMapping
-    public CollectionModel<EntityModel<Game>> all() {
-        List<EntityModel<Game>> games = repository.findAll().stream()
-                .map(assembler::toModel)
-                .collect(Collectors.toList());
-
-        return CollectionModel.of(games, linkTo(methodOn(GameController.class).all()).withSelfRel());
+    public List<Game> all() {
+        return repository.findAll();
     }
 
+    /**
+     * Get Mapping for a specific {@link Game Game}.
+     *
+     * @param id contains the id of a {@link Game Game}.
+     * @return the specific {@link Game Game}.
+     */
     @GetMapping("/{id}")
-    public EntityModel<Game> one(@PathVariable Long id) {
+    public Game one(@PathVariable Long id) {
         Game game = repository.findById(id).orElseThrow(() -> new GameNotFoundException(id));
 
-        return assembler.toModel(game);
+        return game;
     }
 
+    /**
+     * Get Mapping for all {@link Developer Developers} of a specific {@link Game Game}.
+     *
+     * @param id contains the id of a {@link Game Game}.
+     * @return a list of {@link Developer Developers} that developed the {@link Game Game}.
+     */
     @GetMapping("/{id}/developers")
-    public CollectionModel<EntityModel<Developer>> allDevelopers(@PathVariable Long id) {
+    public List<Developer> allDevelopers(@PathVariable Long id) {
         Game game = repository.findById(id).orElseThrow(() -> new GameNotFoundException(id));
-        List<EntityModel<Developer>> developers = game.getDevelopers().stream()
-                .map(developerModelAssembler::toModel)
-                .collect(Collectors.toList());
 
-        return CollectionModel.of(developers, linkTo(methodOn(GameController.class).one(game.getId())).withSelfRel());
+        return game.getDevelopers();
     }
 
+    /**
+     * Get Mapping for all {@link Publisher Publisher} of a specific {@link Game Game}.
+     *
+     * @param id contains the id of a {@link Game Game}.
+     * @return a list of {@link Publisher Publisher} that developed the {@link Game Game}.
+     */
     @GetMapping("/{id}/publishers")
-    public CollectionModel<EntityModel<Publisher>> allPublishers(@PathVariable Long id) {
+    public List<Publisher> allPublishers(@PathVariable Long id) {
         Game game = repository.findById(id).orElseThrow(() -> new GameNotFoundException(id));
-        List<EntityModel<Publisher>> publishers = game.getPublishers().stream()
-                .map(publisherModelAssembler::toModel)
-                .collect(Collectors.toList());
 
-        return CollectionModel.of(publishers, linkTo(methodOn(GameController.class).one(game.getId())).withSelfRel());
+        return game.getPublishers();
     }
 }

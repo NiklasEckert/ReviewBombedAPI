@@ -5,129 +5,156 @@ import de.niklaseckert.reviewbombedapi.controller.exception.RatingNotFoundExcept
 import de.niklaseckert.reviewbombedapi.controller.exception.ReviewNotFoundException;
 import de.niklaseckert.reviewbombedapi.controller.exception.UserNotFoundException;
 import de.niklaseckert.reviewbombedapi.model.*;
-import de.niklaseckert.reviewbombedapi.model.assembler.*;
 import de.niklaseckert.reviewbombedapi.repos.UserRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.hateoas.CollectionModel;
-import org.springframework.hateoas.EntityModel;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
-import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
-
+/**
+ * Controller which handles all {@link User User} requests.
+ *
+ * @author Niklas Eckert
+ * @author Jakob Friedsam
+ */
 @RestController
 @AllArgsConstructor
 @RequestMapping("/users")
 public class UserController {
 
+    /** Repository which contnains the {@link User Users} */
     private final UserRepository repository;
-    private final UserModelAssembler assembler;
-    private final ListModelAssembler listModelAssembler;
-    private final RatingModelAssembler ratingModelAssembler;
-    private final DiaryEntryModelAssembler diaryEntryModelAssembler;
-    private final ReviewModelAssembler reviewModelAssembler;
 
+    /**
+     * Get Mapping for all {@link User Users}.
+     *
+     * @return a list of all {@link User Users}.
+     */
     @GetMapping
-    public CollectionModel<EntityModel<User>> all() {
-        List<EntityModel<User>> users = repository.findAll().stream()
-                .map(assembler::toModel)
-                .collect(Collectors.toList());
-        return CollectionModel.of(users, linkTo(methodOn(UserController.class).all()).withSelfRel());
+    public List<User> all() {
+        return repository.findAll();
     }
 
-//    @GetMapping("/{id}")
-//    public EntityModel<User> one(@PathVariable Long id) {
-//        User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-//        return assembler.toModel(user);
-//    }
-
+    /**
+     * Get Mapping for a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @return a {@link User User}.
+     */
     @GetMapping("/{id}")
     public User one(@PathVariable Long id) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
+
         return user;
     }
 
+    /**
+     * Get Mapping for all {@link ListModel List Model} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @return a list of all {@link ListModel List Models} corresponding to the {@link User User}.
+     */
     @GetMapping("/{id}/lists")
-    public CollectionModel<EntityModel<ListModel>> allListsOfUser(@PathVariable Long id) {
+    public List<ListModel> allListsOfUser(@PathVariable Long id) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-        List<EntityModel<ListModel>> lists = user.getLists().stream()
-                .map(listModelAssembler::toModel)
-                .collect(Collectors.toList());
-        return CollectionModel.of(lists,
-                    linkTo(methodOn(UserController.class).allListsOfUser(user.getId())).withSelfRel(),
-                    linkTo(methodOn(UserController.class).one(user.getId())).withRel("user")
-                );
+
+        return user.getLists();
     }
 
+    /**
+     * Get Mapping for all {@link Rating Ratings} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @return a list of all {@link Rating Ratings} corresponding to the {@link User User}.
+     */
     @GetMapping("/{id}/ratings")
-    public CollectionModel<EntityModel<Rating>> allRatingsOfUser(@PathVariable Long id) {
+    public List<Rating> allRatingsOfUser(@PathVariable Long id) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-        List<EntityModel<Rating>> ratings = user.getRatings().stream()
-                .map(ratingModelAssembler::toModel)
-                .collect(Collectors.toList());
-        return CollectionModel.of(ratings,
-                    linkTo(methodOn(UserController.class).allRatingsOfUser(user.getId())).withSelfRel(),
-                    linkTo(methodOn(UserController.class).one(user.getId())).withRel("user")
-                );
+
+        return user.getRatings();
     }
 
+    /**
+     * Get Mapping for a specific {@link Rating Rating} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @param rId contains the id of a {@link Rating Rating}.
+     * @return the specific {@link Rating Rating}.
+     */
     @GetMapping("/{id}/ratings/{rId}")
-    public EntityModel<Rating> oneRating(@PathVariable Long id, @PathVariable Long rId) {
+    public Rating oneRating(@PathVariable Long id, @PathVariable Long rId) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         Rating rating = user.getRatings().stream()
                 .filter(r -> r.getId().equals(rId))
                 .findFirst()
                 .orElseThrow(() -> new RatingNotFoundException(rId));
-        return ratingModelAssembler.toModel(rating);
+
+        return rating;
     }
 
+    /**
+     * Get Mapping for all {@link DiaryEntry Diary Entries} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @return a list of all {@link DiaryEntry Diary Entries} corresponding to the {@link User User}.
+     */
     @GetMapping("/{id}/diary")
-    public CollectionModel<EntityModel<DiaryEntry>> diaryOfUser(@PathVariable Long id) {
+    public List<DiaryEntry> diaryOfUser(@PathVariable Long id) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-        List<EntityModel<DiaryEntry>> diary = user.getDiary().stream()
-                .map(diaryEntryModelAssembler::toModel)
-                .collect(Collectors.toList());
-        return CollectionModel.of(diary,
-                linkTo(methodOn(UserController.class).diaryOfUser(user.getId())).withSelfRel(),
-                linkTo(methodOn(UserController.class).one(user.getId())).withRel("user")
-        );
+
+        return user.getDiary();
     }
 
+    /**
+     * Get Mapping for a specific {@link DiaryEntry Diary Entry} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @param deId contains the id of a {@link DiaryEntry Diary Entry}.
+     * @return the specific {@link DiaryEntry Diary Entry}.
+     */
     @GetMapping("/{id}/diary/{deId}")
-    public EntityModel<DiaryEntry> oneDiaryEntry(@PathVariable Long id, @PathVariable Long deId) {
+    public DiaryEntry oneDiaryEntry(@PathVariable Long id, @PathVariable Long deId) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         DiaryEntry diaryEntry = user.getDiary().stream()
                 .filter(r -> r.getId().equals(deId))
                 .findFirst()
                 .orElseThrow(() -> new DiaryEntryNotFoundException(deId));
-        return diaryEntryModelAssembler.toModel(diaryEntry);
+
+        return diaryEntry;
     }
 
+    /**
+     * Get Mapping for all {@link Review Reviews} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @return a list of all {@link Review Reviews} corresponding to the {@link User User}.
+     */
     @GetMapping("/{id}/reviews")
-    public CollectionModel<EntityModel<Review>> allReviewsOfUser(@PathVariable Long id) {
+    public List<Review> allReviewsOfUser(@PathVariable Long id) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
-        List<EntityModel<Review>> reviews = user.getReviews().stream()
-                .map(reviewModelAssembler::toModel)
-                .collect(Collectors.toList());
-        return CollectionModel.of(reviews,
-                linkTo(methodOn(UserController.class).diaryOfUser(user.getId())).withSelfRel(),
-                linkTo(methodOn(UserController.class).one(user.getId())).withRel("user")
-        );
+
+        return user.getReviews();
     }
 
+    /**
+     * Get Mapping for a specific {@link Review Review} of a specific {@link User User}.
+     *
+     * @param id contains the id of a {@link User User}.
+     * @param rId contains the id of a {@link Review Review}.
+     * @return the specific {@link Review Review}.
+     */
     @GetMapping("/{id}/reviews/{rId}")
-    public EntityModel<Review> oneReview(@PathVariable Long id, @PathVariable Long rId) {
+    public Review oneReview(@PathVariable Long id, @PathVariable Long rId) {
         User user = repository.findById(id).orElseThrow(() -> new UserNotFoundException(id));
         Review review = user.getReviews().stream()
                 .filter(r -> r.getId().equals(rId))
                 .findFirst()
                 .orElseThrow(() -> new ReviewNotFoundException(rId));
-        return reviewModelAssembler.toModel(review);
+
+        return review;
     }
 }
