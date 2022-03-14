@@ -46,4 +46,9 @@ public class ReviewController {
 
         return repository.save(review);
     }
+
+    @DeleteMapping
+    public void delete(@RequestHeader("reviewId") Long reviewId) {
+        repository.deleteById(reviewId);
+    }
 }
