@@ -74,6 +74,11 @@ public class ReviewController {
         return repository.save(review);
     }
 
+    /**
+     * Delete mapping for a {@link Review Review}.
+     *
+     * @param reviewId contains the id of the {@link Review} which should be deleted.
+     */
     @DeleteMapping
     public void delete(@RequestHeader("reviewId") Long reviewId) {
         repository.deleteById(reviewId);
