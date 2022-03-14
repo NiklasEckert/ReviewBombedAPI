@@ -109,6 +109,12 @@ INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Syndicate', '2015-10-23', 
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Origins', '2017-10-27', 'The tenth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/2/2f/ACOrigins_cover.jpg/revision/latest/scale-to-width-down/700?cb=20200127122455', 'https://c4.wallpaperflare.com/wallpaper/173/586/516/assassin-s-creed-assassin-s-creed-origins-bayek-of-siwa-wallpaper-preview.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Odyssey', '2018-10-05', 'The eleventh installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/f/f5/Assassin%27s_Creed_Odyssey.jpg/revision/latest/scale-to-width-down/700?cb=20210519141716', 'https://i.ytimg.com/vi/hCHvx-I8A0w/maxresdefault.jpg');
 INSERT INTO games VALUES (DEFAULT, 'Assassin''s Creed Valhalla', '2020-11-10', 'The twelfth installment in the Assassin''s Creed franchise.', 'https://static.wikia.nocookie.net/assassinscreed/images/6/65/AC_Valhalla_cover.jpg/revision/latest/scale-to-width-down/666?cb=20200430195147', 'http://digicpictures.com///images/upload/Raven_cover_00003321.jpg');
+INSERT INTO games VALUES (DEFAULT, 'Watch Dogs', '2014-05-27', 'The first Watch Dog Game.', 'https://static.posters.cz/image/750/poster/watch-dogs-cover-i15072.jpg', 'https://pixelsmithstudios.com/wp-content/uploads/2014/06/Watch-Dogs-Cinematic-Trailer-Pixelsmithstudios.jpg');
+INSERT INTO games VALUES (DEFAULT, 'Watch Dogs 2', '2016-11-15', 'The second Watch Dog Game.', 'https://s1.gaming-cdn.com/images/products/1365/orig/watch-dogs-2-pc-spiel-ubisoft-connect-europe-cover.jpg', 'https://m.media-amazon.com/images/M/MV5BYjUyMjdmZDYtZjMwMC00ZmMxLTg5YzUtODRlMmY1YWZhNWU1L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjk3NTc4ODI@._V1_.jpg');
+INSERT INTO games VALUES (DEFAULT, 'Star Wars Jedi: Fallen Order', '2019-11-15', 'The first game of the Star Wars Jedi Series.', 'https://www.pcgames.de/screenshots/1020x/2019/06/Star-Wars-Jedi-Fallen-Order-Box-Cover-Standard-pc-games.jpg', 'https://starwarsblog.starwars.com/wp-content/uploads/2019/06/fallen-order-cal-bd1.jpg');
+INSERT INTO games VALUES (DEFAULT, 'The Witcher', '2007-10-26', 'The first game of the Witcher franchise.', 'https://cdn-products.eneba.com/resized-products/Ul5xmvlJr1SME8r2Fo17oT_bmqneD5CuTJBOb_tgLSk_350x200_3x-0.jpeg', 'https://i.ytimg.com/vi/Ntjv4jdwmCM/maxresdefault.jpg');
+INSERT INTO games VALUES (DEFAULT, 'The Witcher 2: Assassins of Kings', '2011-05-17', 'The second game of the Witcher franchise.', 'https://s1.gaming-cdn.com/images/products/789/orig/the-witcher-2-assassins-of-kings-enhanced-edition-enhanced-edition-pc-spiel-gogcom-cover.jpg', 'https://www.buffed.de/screenshots/1020x/2010/03/Witcher2_18.jpg');
+INSERT INTO games VALUES (DEFAULT, 'The Witcher 3: Wild Hunt', '2015-05-18', 'The third game of the Witcher franchise.', 'https://s2.gaming-cdn.com/images/products/268/orig/game-gog-com-the-witcher-3-wild-hunt-cover.jpg', 'https://i.pinimg.com/originals/1f/93/7c/1f937c4ac066a68820ee3a943c0f3662.jpg');
 
 INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot005.jpg');
 INSERT INTO screenshot VALUES (DEFAULT, 1, 'https://www.assassinscreed.de/sites/www.assassinscreed.de/files/assassins_creed_screenshot001.jpg');
@@ -182,7 +188,51 @@ INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gam
 INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/279/assassins-creed-valhalla-screenshots_6115884.jpg');
 INSERT INTO screenshot VALUES (DEFAULT, 12, 'https://images.cgames.de/images/gamestar/279/assassins-creed-valhalla-screenshots_6115880.jpg');
 
+INSERT INTO screenshot VALUES (DEFAULT, 13, 'https://www.pcgameshardware.de/screenshots/970x546/2013/12/Watch_Dogs__1_-pcgh.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 13, 'https://www.pcgameshardware.de/screenshots/970x546/2013/12/Watch_Dogs__2_-pcgh.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 13, 'https://www.pcgameshardware.de/screenshots/970x546/2013/12/Watch_Dogs__3_-pcgh.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 13, 'https://nintendoeverything.com/wp-content/uploads/Watch_Dogs_Skyline_WiiU_1416328395-1.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 13, 'https://images.cgames.de/images/gamestar/287/watch-dogs-screenshots_2398445.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 14, 'https://images.cgames.de/images/gamestar/279/watch-dogs-2_2758092.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 14, 'https://images.cgames.de/images/gamestar/279/watch-dogs-2-screenshots_2777410.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 14, 'https://images.cgames.de/images/gamestar/279/watch-dogs-2-screenshots_2777411.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 14, 'https://images.cgames.de/images/gamestar/279/watch-dogs-2_2758089.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 14, 'https://images.cgames.de/images/gamestar/279/watch-dogs-2_2758090.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 15, 'https://images.cgames.de/images/gamestar/279/star-wars-jedi-fallen-order_6082968.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 15, 'https://images.cgames.de/images/gamestar/279/star-wars-jedi-fallen-order_6082969.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 15, 'https://images.cgames.de/images/gamestar/279/star-wars-jedi-fallen-order_6082972.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 15, 'https://images.cgames.de/images/gamestar/279/star-wars-jedi-fallen-order_6082973.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 15, 'https://images.cgames.de/images/gamestar/279/star-wars-jedi-fallen-order_6082979.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 16, 'https://images.cgames.de/images/gamestar/279/the-witcher-enhanced-edition_1839553.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 16, 'https://images.cgames.de/images/gamestar/279/the-witcher-enhanced-edition_1839541.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 16, 'https://images.cgames.de/images/gamestar/279/the-witcher-enhanced-edition_1839552.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 16, 'https://images.cgames.de/images/gamestar/279/the-witcher-enhanced-edition_1839550.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 16, 'https://images.cgames.de/images/gamestar/279/the-witcher-enhanced-edition_1839547.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 17, 'https://images.cgames.de/images/gamestar/279/the-witcher-2-assassins-of-kings-enhanced-edition_2285293.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 17, 'https://images.cgames.de/images/gamestar/279/the-witcher-2-assassins-of-kings-enhanced-edition_2285295.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 17, 'https://images.cgames.de/images/gamestar/279/the-witcher-2-assassins-of-kings-enhanced-edition_2285297.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 17, 'https://images.cgames.de/images/gamestar/279/the-witcher-2-assassins-of-kings-enhanced-edition_2285299.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 17, 'https://images.cgames.de/images/gamestar/279/the-witcher-2-assassins-of-kings-enhanced-edition_2285302.jpg');
+
+INSERT INTO screenshot VALUES (DEFAULT, 18, 'https://images.cgames.de/images/gamestar/279/the-witcher-3-wild-hunt_2634225.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 18, 'https://images.cgames.de/images/gamestar/279/the-witcher-3-wild-hunt_2634227.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 18, 'https://images.cgames.de/images/gamestar/279/the-witcher-3-wild-hunt_2634226.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 18, 'https://images.cgames.de/images/gamestar/279/the-witcher-3-wild-hunt_2634222.jpg');
+INSERT INTO screenshot VALUES (DEFAULT, 18, 'https://images.cgames.de/images/gamestar/279/the-witcher-3-wild-hunt_2634220.jpg');
+
 INSERT INTO publisher VALUES (DEFAULT, 'Ubisoft');
+INSERT INTO publisher VALUES (DEFAULT, 'Electronic Arts');
+INSERT INTO publisher VALUES (DEFAULT, 'Atari SA');
+INSERT INTO publisher VALUES (DEFAULT, 'CD Projekt');
+INSERT INTO publisher VALUES (DEFAULT, 'Bandai Namco Games');
+INSERT INTO publisher VALUES (DEFAULT, '1C');
+INSERT INTO publisher VALUES (DEFAULT, 'Bandai Namco Entertainment');
+INSERT INTO publisher VALUES (DEFAULT, 'Warner Bros. Interactive');
+INSERT INTO publisher VALUES (DEFAULT, 'Spike Chunsoft');
 
 INSERT INTO developer VALUES (DEFAULT, 'Ubisoft Montreal');
 INSERT INTO developer VALUES (DEFAULT, 'Ubisoft Québec');
@@ -192,40 +242,67 @@ INSERT INTO developer VALUES (DEFAULT, 'Ubisoft Kiev');
 INSERT INTO developer VALUES (DEFAULT, 'Ubisoft Shanghai');
 INSERT INTO developer VALUES (DEFAULT, 'Ubisoft Singapore');
 INSERT INTO developer VALUES (DEFAULT, 'Ubisoft Sofia');
+INSERT INTO developer VALUES (DEFAULT, 'Respawn Entertainment');
+INSERT INTO developer VALUES (DEFAULT, 'CD Projekt RED');
+INSERT INTO developer VALUES (DEFAULT, 'Saber Interactive');
 
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed'                AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed II'             AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed: Brotherhood'   AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed: Revelations'   AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed IV: Black Flag' AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Rogue'          AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Unity'          AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Syndicate'      AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Origins'        AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Odyssey'        AND name = 'Ubisoft';
-INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Valhalla'       AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed'                 AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed II'              AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed: Brotherhood'    AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed: Revelations'    AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed IV: Black Flag'  AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Rogue'           AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Unity'           AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Syndicate'       AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Origins'         AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Odyssey'         AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Assassin''s Creed Valhalla'        AND name = 'Ubisoft';
 
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed'                AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed II'             AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed: Brotherhood'   AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed: Revelations'   AND name = 'Ubisoft Montreal';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Watch Dogs'                        AND name = 'Ubisoft';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Watch Dogs 2'                      AND name = 'Ubisoft';
 
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Québec';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Annecy';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Bucharest';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Kiev';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Shanghai';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'            AND name = 'Ubisoft Singapore';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'Star Wars Jedi: Fallen Order'      AND name = 'Electronic Arts';
 
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed IV: Black Flag' AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Rogue'          AND name = 'Ubisoft Sofia';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Unity'          AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Syndicate'      AND name = 'Ubisoft Québec';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Origins'        AND name = 'Ubisoft Montreal';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Odyssey'        AND name = 'Ubisoft Québec';
-INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Valhalla'       AND name = 'Ubisoft Montreal';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher'                       AND name = 'Atari SA';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher'                       AND name = 'CD Projekt';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 2: Assassins of Kings' AND name = 'CD Projekt';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 2: Assassins of Kings' AND name = 'Bandai Namco Games';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 2: Assassins of Kings' AND name = 'Atari SA';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 2: Assassins of Kings' AND name = '1C';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 3: Wild Hunt'          AND name = 'Bandai Namco Entertainment';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 3: Wild Hunt'          AND name = 'Warner Bros. Interactive';
+INSERT INTO games_publisher SELECT g.id, p.id FROM games g, publisher p WHERE title = 'The Witcher 3: Wild Hunt'          AND name = 'Spike Chunsoft';
+
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed'                 AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed II'              AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed: Brotherhood'    AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed: Revelations'    AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Watch Dogs'                        AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Watch Dogs 2'                      AND name = 'Ubisoft Montreal';
+
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Québec';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Annecy';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Bucharest';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Kiev';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Shanghai';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed III'             AND name = 'Ubisoft Singapore';
+
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed IV: Black Flag'  AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Rogue'           AND name = 'Ubisoft Sofia';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Unity'           AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Syndicate'       AND name = 'Ubisoft Québec';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Origins'         AND name = 'Ubisoft Montreal';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Odyssey'         AND name = 'Ubisoft Québec';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Assassin''s Creed Valhalla'        AND name = 'Ubisoft Montreal';
+
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'Star Wars Jedi: Fallen Order'      AND name = 'Respawn Entertainment';
+
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'The Witcher'                       AND name = 'CD Projekt RED';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'The Witcher 2: Assassins of Kings' AND name = 'CD Projekt RED';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'The Witcher 3: Wild Hunt'          AND name = 'CD Projekt RED';
+INSERT INTO games_developer SELECT g.id, d.id FROM games g, developer d WHERE title = 'The Witcher 3: Wild Hunt'          AND name = 'Saber Interactive';
 
 INSERT INTO rb_user VALUES (DEFAULT, 'LEGION', 'niklas.eckert.1807@gmail.com', 'password1234', 'https://nextcloud.niklas-eckert.de/index.php/s/yHS7oEHn6BMyL29/preview');
 INSERT INTO rb_user VALUES (DEFAULT, 'jako264', 'jakob.friedsam@gmx.de', 'wild', 'https://static.wikia.nocookie.net/starwars/images/a/a3/Appo.jpg/revision/latest?cb=20080427033310');
@@ -272,6 +349,8 @@ INSERT INTO diary_entry (rate, date, user_id, game_id) SELECT 6, '2021-05-26', u
 
 INSERT INTO list (name, description, user_id) SELECT 'Ezio Trilogy', 'All titles with Ezio.', u.id FROM rb_user u WHERE name = 'LEGION';
 INSERT INTO list (name, description, user_id) SELECT 'AC Female', 'All AC titles with female protagonists.', u.id FROM rb_user u WHERE name = 'LEGION';
+INSERT INTO list (name, description, user_id) SELECT 'Cool Dogs', 'Cool dog games.', u.id FROM rb_user u WHERE name = 'jako264';
+INSERT INTO list (name, description, user_id) SELECT 'Witcher games', 'All The Witcher games.', u.id FROM rb_user u WHERE name = 'jako264';
 
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed II';
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Ezio Trilogy' AND g.title = 'Assassin''s Creed: Brotherhood';
@@ -280,3 +359,10 @@ INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'AC Female' AND g.title = 'Assassin''s Creed Syndicate';
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'AC Female' AND g.title = 'Assassin''s Creed Odyssey';
 INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'AC Female' AND g.title = 'Assassin''s Creed Valhalla';
+
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Cool Dogs' AND g.title = 'Watch Dogs';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Cool Dogs' AND g.title = 'Watch Dogs 2';
+
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Witcher games' AND g.title = 'The Witcher';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Witcher games' AND g.title = 'The Witcher 2: Assassins of Kings';
+INSERT INTO list_games (list_id, game_id) SELECT l.id, g.id FROM list l, games g WHERE l.name = 'Witcher games' AND g.title = 'The Witcher 3: Wild Hunt';
